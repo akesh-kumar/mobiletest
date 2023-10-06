@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>BLCWebApp</display-name>
+	<welcome-file-list>
+		<welcome-file>TestServlet</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext-jdbc.xml</param-value>
+	</context-param>
+	<filter>
+		<description>
+		</description>
+		<display-name>RCLFilter</display-name>
+		<filter-name>RCLFilter</filter-name>
+		<filter-class>com.rclgroup.dolphin.web.RCLFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RCLFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>resteasy.scan</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<param-name>resteasy.scan.resources</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<param-name>resteasy.scan.providers</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>RrcGenericSrv</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.common.RrcGenericSrv</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RrcGenericLinkMenuSrv</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.common.RrcGenericLinkMenuSrv</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RrcStandardSrv</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.common.RrcStandardSrv</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>TestServlet</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.TestServlet</servlet-class>
+			
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginServet</display-name>
+		<servlet-name>LoginServet</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.servelt.LoginServet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogOutServlet</display-name>
+		<servlet-name>LogOutServlet</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.servelt.LogOutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>test</display-name>
+		<servlet-name>test</servlet-name>
+		<servlet-class>com.rclgroup.dolphin.web.servelt.test</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RrcGenericSrv</servlet-name>
+		<url-pattern>/RrcGenericSrv</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RrcGenericLinkMenuSrv</servlet-name>
+		<url-pattern>/RrcGenericLinkMenuSrv</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RrcStandardSrv</servlet-name>
+		<url-pattern>/RrcStandardSrv</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/TestServlet</url-pattern>
+	
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServet</servlet-name>
+		<url-pattern>/LoginServet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogOutServlet</servlet-name>
+		<url-pattern>/LogOutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>test</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+		
+</web-app>

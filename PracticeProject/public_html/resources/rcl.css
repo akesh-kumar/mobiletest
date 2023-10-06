@@ -1,0 +1,372 @@
+body {
+	width: 100%; height: 100%; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px;
+}
+.rcl-standard-page-header {
+	border-radius: 0rem; text-align: left; color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; border-bottom-color: rgb(30, 12, 134); border-bottom-width: 2px; border-bottom-style: solid; background-color: rgb(61, 119, 203);
+}
+.rcl-standard-page-header-2 {
+	border-radius: 0rem; text-align: right; color: rgb(255, 255, 255); padding-right: 5px; font-size: 9px; background-color: gray;
+}
+.rcl-standard-navigation-bar {
+	text-align: left; color: rgb(12, 11, 11); font-weight: bold; border-bottom-color: rgb(51, 71, 255); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.rcl-standard-navigation-bar-tab {
+	padding: 0.1rem; border-radius: 0.2rem; width: 150px; text-align: center; color: rgb(12, 11, 11); font-weight: bold;
+}
+li a:hover {
+	border-left-color: rgb(51, 71, 255); border-left-width: 4px; border-left-style: solid; background-color: rgb(214, 223, 253);
+}
+#tabs .nav-tabs .nav-item.show .nav-link {
+	color: rgb(255, 255, 255); background-color: rgb(61, 119, 203);
+}
+.nav-tabs .nav-link.active {
+	color: rgb(255, 255, 255); background-color: rgb(61, 119, 203);
+}
+.rcl-standard-search-header {
+	padding: 0.5rem; text-align: left; color: rgb(12, 11, 11); font-weight: bold; margin-bottom: 0rem; background-color: rgb(244, 245, 247);
+}
+.rcl-standard-search-result {
+	padding: 0.5rem; text-align: left; color: rgb(12, 11, 11); font-weight: normal; margin-bottom: 0rem;
+}
+.rcl-standard-search-font {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;
+}
+.rcl-standard-component {
+	border-radius: 0.2rem; border: 1px solid rgb(51, 102, 255); border-image: none; width: 100%;
+}
+input {
+	border-radius: 0.2rem; border: 1px solid rgb(51, 102, 255); border-image: none; width: 100%;
+}
+.styled-select select {
+	border-width: 0px 0px 0px 4px; border-style: solid; border-color: rgb(51, 102, 255); border-radius: 0.2rem; border-image: none; width: 100%;
+}
+input:required {
+	border-left-color: rgb(255, 51, 51); border-left-width: 4px; border-left-style: solid;
+}
+select:required {
+	border-left-color: rgb(255, 51, 51); border-left-width: 4px; border-left-style: solid;
+}
+select[data-dis] {
+	border: 0px currentColor; border-image: none; color: rgb(84, 84, 84); text-indent: 0.01px; padding-left: 5px; pointer-events: none; background-color: rgb(232, 232, 232); -webkit-appearance: none; -moz-appearance: none;
+}
+select[data-rdo] {
+	border: 0px currentColor; border-image: none; color: black; text-indent: 0.01px; padding-left: 5px; pointer-events: none; background-color: rgb(232, 232, 232); -webkit-appearance: none; -moz-appearance: none;
+}
+input:disabled {
+	border: 0px currentColor; border-image: none; padding-left: 5px; background-color: rgb(232, 232, 232);
+}
+input[type=checkbox] {
+	width: auto; margin-top: 10px; margin-left: 5px; position: relative; cursor: pointer;
+}
+input[type=date]:disabled {
+	height: 15px;
+}
+input[type=time]:disabled {
+	height: 15px;
+}
+.tblRow .gridRow select[data-rdo] {
+	padding-left: 0px; background-color: transparent;
+}
+.rcl-standard-form-control {
+	padding: 1px;
+}
+.rcl-standard-input-wrapper {
+	position: relative;
+}
+.rcl-standard-input-wrapper i {
+	top: 2px; right: 5px; color: black; font-size: 14px; position: absolute;
+}
+a[data-toggle='tooltip'] {
+	color: rgb(12, 11, 11);
+}
+i {
+	font-size: 14px; cursor: pointer;
+}
+.rcl-standard-button {
+	background: rgb(134, 135, 139); padding: 0px 15px; border-radius: 0.2rem; border: 0px currentColor; border-image: none; width: auto; height: 18px; color: rgb(255, 255, 255); font-weight: normal; box-shadow: 1px 1px 5px 0px rgba(163,163,163,1); -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+}
+.rcl-standard-button:hover {
+	color: rgb(61, 119, 203); cursor: pointer; background-color: rgb(214, 223, 253);
+}
+.rcl-standard-table {
+	width: 95%; color: rgb(0, 0, 0); font-size: 11px; font-weight: normal; border-collapse: collapse; background-color: rgb(212, 225, 245);
+}
+.rcl-standard-input-icon {
+	left: 170px; top: calc(50% - 0.5em); position: absolute;
+}
+.ui-datetimepicker {
+	background: rgb(47, 153, 180); padding: 0.2em 0.2em 0px; width: 17em; display: none;
+}
+.hidden {
+	display: none;
+}
+.ajax_loader {
+	background: rgba(0, 0, 0, 0.5); left: 0px; top: 0px; width: 100%; height: 100%; position: absolute;
+}
+.ajax_loader i {
+	left: 50%; top: 50%; position: absolute;
+}
+label {
+	margin-bottom: 0px;
+}
+.row {
+	padding-bottom: 5px;
+}
+.rcl-hr {
+	margin-top: 5px; margin-bottom: 5px;
+}
+.rcl-standard-widget-header {
+	border-radius: 0rem; height: 25px; text-align: left; color: white; padding-top: 3px; padding-left: 3px; font-weight: bold; border-bottom-color: rgb(30, 12, 134); border-bottom-width: 2px; border-bottom-style: solid; background-color: rgb(61, 119, 203);
+}
+.rcl-standard-button-header {
+	background: lightgrey; border-radius: 0.2rem; border: 0px currentColor; border-image: none; width: auto; height: 18px; color: black; font-weight: normal;
+}
+.rcl-standard-button-header:hover {
+	color: rgb(61, 119, 203); cursor: pointer; background-color: rgb(214, 223, 253);
+}
+.rcl-standard-version-header {
+	text-align: right; color: rgb(12, 11, 11); padding-right: 5px; font-size: 9px; background-color: rgb(244, 245, 247);
+}
+.rcl-tableLeftSub {
+	background: rgb(233, 231, 215); height: 20px; text-align: left; color: rgb(0, 51, 153); padding-left: 2px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 70%; font-weight: normal; vertical-align: middle; border-top-color: rgb(106, 120, 150); border-bottom-color: rgb(106, 120, 150); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.rcl-tableLeftText {
+	background: rgb(62, 113, 204); height: 20px; text-align: left; color: rgb(255, 255, 255); padding-left: 2pc; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 105%; font-weight: bold; vertical-align: middle;
+}
+.tblArea {
+	padding-left: 15px;
+}
+.rcl-standard-widget-header > span {
+	padding: 0px 15px; margin-bottom: 15px;
+}
+.container-fluid {
+	margin-right: 0px; margin-left: 0px;
+}
+.fa-edit:hover {
+	cursor: pointer;
+}
+a.popover-label {
+	color: black;
+}
+a.microhelp-label {
+	color: black;
+}
+.ui-dialog {
+	font-size: 10px;
+}
+#ui-datepicker-div {
+	z-index: 1003 !important;
+}
+.ui-datepicker span {
+	padding: 0pc 0px 0px;
+}
+.rcl-modal {
+	left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; display: block; position: fixed; z-index: 1004; background-color: rgba(196, 196, 196, 0.4);
+}
+.rcl-dropdown-content {
+	left: 400px; top: 50px; overflow: auto; display: none; position: absolute; z-index: 100; min-width: 80px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: rgb(241, 241, 241);
+}
+.rcl-dropdown-content a {
+	padding: 5px; color: black; text-decoration: none; display: block;
+}
+.rcl-dropdown-content a:hover {
+	background: darkgray; color: white;
+}
+.rptPgIndicator {
+	border: 0px currentColor; border-image: none; width: 200px; padding-bottom: 3px; padding-left: 5px; margin-top: 7px; min-width: 150px; background-color: rgb(232, 232, 232);
+}
+.rptPgGotoField {
+	padding-bottom: 3px; padding-left: 4px; margin-top: 3px; min-width: 50px;
+}
+.rptPgBtn {
+	background: rgb(134, 135, 139); border-radius: 0.2rem; color: rgb(255, 255, 255); font-family: Arial; font-size: 10px; font-weight: normal; text-decoration: none; display: inline-block; cursor: pointer; box-shadow: 1px 1px 5px 0px rgba(163,163,163,1); text-shadow: 0px 1px 0px #528ecc; -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+.rclLookupDlgBtn {
+	background: rgb(134, 135, 139); border-radius: 0.2rem; color: rgb(255, 255, 255); font-family: Arial; font-size: 10px; font-weight: normal; text-decoration: none; display: inline-block; cursor: pointer; box-shadow: 1px 1px 5px 0px rgba(163,163,163,1); text-shadow: 0px 1px 0px #528ecc; -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+.rptPgBtn {
+	padding: 1px 0px; text-align: center; margin-left: 2px; min-width: 25px;
+}
+.rclLookupDlgBtn {
+	padding: 5px 6px;
+}
+.rptPgBtn:hover {
+	color: rgb(61, 119, 203); text-decoration: none; cursor: pointer; background-color: rgb(214, 223, 253);
+}
+.rclLookupDlgBtn:hover {
+	color: rgb(61, 119, 203); text-decoration: none; cursor: pointer; background-color: rgb(214, 223, 253);
+}
+.rptPgBtn:active {
+	top: 1px; position: relative;
+}
+.rclLookupDlgBtn:active {
+	top: 1px; position: relative;
+}
+.rptPgBtn:focus {
+	border-radius: 5px; border: 2px dotted whitesmoke; border-image: none;
+}
+.rptPgBtn.noPointer {
+	background: rgb(121, 187, 255); pointer-events: none;
+}
+.rptPgGotoLabel {
+	background: rgb(134, 135, 139); padding: 1px 2px; border-radius: 0.2rem; text-align: center; color: rgb(255, 255, 255); font-family: Arial; font-size: 10px; font-weight: normal; text-decoration: none; margin-right: 5px; display: inline-block; cursor: pointer; min-width: 40px; box-shadow: 1px 1px 5px 0px rgba(163,163,163,1); text-shadow: 0px 1px 0px #528ecc; -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+.rptPgGotoLabel:hover {
+	color: rgb(61, 119, 203); text-decoration: none; cursor: pointer; background-color: rgb(214, 223, 253);
+}
+.rptPgGotoLabel:active {
+	top: 1px; position: relative;
+}
+.rclDlgSortDirectionBtn {
+	background: linear-gradient(rgb(249, 249, 249) 5%, rgb(233, 233, 233) 100%) rgb(249, 249, 249); padding: 1px 2px; border-radius: 6px; border: 1px solid rgb(220, 220, 220); border-image: none; color: rgb(102, 102, 102); font-family: Arial; font-size: 10px; text-decoration: none; display: inline-block; cursor: pointer; box-shadow: inset 0px 1px 0px 0px #ffffff; text-shadow: 0px 1px 0px #ffffff; -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff; -moz-box-shadow: inset 0px 1px 0px 0px #ffffff; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+}
+.rclDlgSortDirectionBtn:hover {
+	background: linear-gradient(rgb(233, 233, 233) 5%, rgb(249, 249, 249) 100%) rgb(233, 233, 233);
+}
+.rclDlgSortDirectionBtn:active {
+	top: 1px; position: relative;
+}
+.rptSortBtnHighlight {
+	background: linear-gradient(rgb(68, 199, 103) 5%, rgb(92, 191, 42) 100%) rgb(68, 199, 103); padding: 1px !important; border-radius: 28px; border: 2px solid rgb(24, 171, 41); border-image: none; text-align: center; color: red !important; font-family: Arial; font-size: 10px; text-decoration: none; display: inline-block; cursor: pointer; text-shadow: 0px 1px 0px #2f6627; -moz-border-radius: 28px; -webkit-border-radius: 28px;
+}
+.rptSortBtnHighlight:hover {
+	background: linear-gradient(rgb(92, 191, 42) 5%, rgb(68, 199, 103) 100%) rgb(92, 191, 42);
+}
+.rptSortBtnHighlight:active {
+	top: 1px; position: relative;
+}
+.rptSortBtnColor {
+	padding: 1px !important; border-radius: 28px; border: 1px solid rgb(204, 194, 166); border-image: none; text-align: center; font-family: Arial; font-size: 10px; text-decoration: none; display: inline-block; cursor: pointer; text-shadow: 0px 0px 0px #2f6627; -moz-border-radius: 28px; -webkit-border-radius: 28px;
+}
+.rptSortBtnColor:hover {
+	background: linear-gradient(rgb(92, 191, 42) 5%, rgb(68, 199, 103) 100%) rgb(92, 191, 42);
+}
+.rptSortBtnColor:active {
+	top: 1px; position: relative;
+}
+.col-0x25 {
+	flex:0 0 2.08%; max-width: 2.08%;
+}
+.offset-0x25 {
+	margin-left: 2.08%;
+}
+.col-0x5 {
+	flex:0 0 4.16%; max-width: 4.16%;
+}
+.offset-0x5 {
+	margin-left: 4.16%;
+}
+.col-0x75 {
+	flex:0 0 6.25%; max-width: 6.25%;
+}
+.offset-0x75 {
+	margin-left: 6.25%;
+}
+.col-1x25 {
+	padding: 0px 15px; flex:0 0 10.41%; max-width: 10.41%;
+}
+.offset-1x25 {
+	margin-left: 10.41%;
+}
+.col-1x5 {
+	padding: 0px 15px; flex:0 0 12.5%; max-width: 12.5%;
+}
+.offset-1x5 {
+	margin-left: 12.5%;
+}
+.col-1x75 {
+	flex:0 0 14.58%; max-width: 14.58%;
+}
+.offset-1x75 {
+	margin-left: 14.58%;
+}
+.rcl-message {
+	padding-top: 0px !important; padding-bottom: 0px !important; margin-top: 0px !important; margin-bottom: 0px !important;
+}
+.rcl-messageCode {
+	padding-top: 0px !important; padding-bottom: 0px !important; margin-top: 0px !important; margin-bottom: 0px !important;
+}
+.rcl-messageCode {
+	font-size: 0.75rem; font-weight: 300;
+}
+.ui-widget-header {
+	background: rgb(61, 119, 203);
+}
+.ui-widget.ui-widget-content {
+	border: 1px solid rgb(61, 119, 203); border-image: none;
+}
+.ui-button {
+	background: rgb(134, 135, 139); padding: 0px 15px; border-radius: 0.2rem; border: 0px currentColor; border-image: none; width: auto; height: 18px; color: rgb(255, 255, 255); font-weight: normal; box-shadow: 1px 1px 5px 0px rgba(163,163,163,1); -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1); -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+}
+.ui-button:hover {
+	background: rgb(214, 223, 253); border: 0px currentColor; border-image: none; color: rgb(61, 119, 203); cursor: pointer;
+}
+.ui-button .ui-icon {
+	background-image: url("/BKGWebApp/js/libs/images/ui-icons_ffffff_256x240.png");
+}
+.ui-widget-content {
+	border: 1px solid rgb(61, 119, 203); border-image: none;
+}
+.rclPopoverColumnHdr {
+	border-color: black !important; margin: 0px; padding: 3px 5px 3px 3px !important; text-align: center; color: white; font-weight: bold; background-color: grey;
+}
+.rclPopoverElement {
+	border-style: inset !important; margin: 0px; padding: 3px 5px 3px 3px !important;
+}
+.rclPopoverLabel {
+	border-style: inset !important; margin: 0px; padding: 3px 5px 3px 3px !important;
+}
+.rclPopoverLabel {
+	font-weight: bold;
+}
+.rclPopoverElementEven {
+	border-color: grey !important; color: rgb(65, 64, 64); background-color: lightgrey;
+}
+.rclPopoverElementOdd {
+	border-color: grey !important; color: white; background-color: darkgrey;
+}
+.rclPopoverCol1 {
+	width: 100px;
+}
+.rclPopoverCol2 {
+	width: 150px;
+}
+#d99Popover-dlg {
+	display: flex; justify-content: center;
+}
+#d99Detail thead {
+	width: 250px; display: table;
+}
+#d99Detail tbody {
+	width: 267px; overflow: auto; display: block; max-height: 300px;
+}
+.rptEvenRow {
+	background-color: rgb(248, 249, 250);
+}
+.rptOddRow {
+	background-color: white;
+}
+#t99Lookup-dlg {
+	border: 1px solid rgb(106, 120, 150); border-image: none; font-size: 10px; -ms-overflow-x: auto; -ms-overflow-y: hidden; box-sizing: content-box;
+}
+.rcl-lkHeader {
+	padding-left: 15px;
+}
+.rcl-lkHeaderRow {
+	margin: 0px; display: flex; flex-wrap: nowrap;
+}
+.rcl-lkHeaderCell {
+	padding: 3px; border: 1px solid rgb(106, 120, 150); border-image: none; font-weight: bold; flex-grow: 0; flex-shrink: 0;
+}
+.rcl-lkArea {
+	height: 400px; -ms-overflow-y: scroll;
+}
+.rcl-lkAreaRow {
+	margin: 0px; display: flex; flex-wrap: nowrap;
+}
+.rcl-lkAreaCell {
+	padding: 3px; border: 1px solid rgb(106, 120, 150); border-image: none; -ms-word-wrap: break-word; flex-grow: 0; flex-shrink: 0;
+}
+#t99paging {
+	width: 450px; padding-right: 15px;
+}

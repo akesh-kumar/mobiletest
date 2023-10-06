@@ -1,0 +1,966 @@
+/*-----------------------------------------------------------------------------------------------------------  
+rcl.css
+------------------------------------------------------------------------------------------------------------- 
+Copyright RCL Public Co., Ltd. 2018 
+-------------------------------------------------------------------------------------------------------------
+Author various
+- Change Log ------------------------------------------------------------------------------------------------  
+## DD/MM/YY -User-     -TaskRef-  -Short Description
+01 08/01/2019 aschey1             added .ui-datepicker span, previously someone had added padding to all span
+02 16/01/2019 aschey1             added rcl-modal to block a page against input when a dialog flow was used
+03 26/01/2019 aschey1             added rcl_message,rcl_messageCode better support mesage box  
+04 18/02/2019 aschey1             added rclPopover.. styles for popover dialog
+05 01/03/2019 aschey1             performance improvement of openLookup
+06 10/04/2019 aschey1			  remove message box styling
+-------------------------------------------------------------------------------------------------------------*/
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+}
+.rcl-standard-page-header {
+    background-color: #3D77CB;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: .0rem;
+    border-bottom: 2px solid #1e0c86;
+}
+.rcl-standard-page-header-2 {
+    background-color: gray;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 9px;
+    /*font-weight: bold;*/
+    border-radius: .0rem;
+    /*border-bottom: 4px solid rgba(255, 51, 51, 0.589);*/
+    padding-right: 5px;
+}
+
+
+.rcl-standard-navigation-bar {
+    font-weight: bold;
+    color: #0c0b0b;
+    text-align: left;
+    /*background-color: #4c8ef1;*/
+    border-bottom: 1px solid rgb(51, 71, 255);
+}
+
+.rcl-standard-navigation-bar-tab {
+    text-align: center;
+    width: 150px;
+    /*background-color: #4c8ef1;*/
+    color: #0c0b0b;
+    padding: 0.1rem;
+    font-weight: bold;
+    border-radius: .2rem;
+}
+
+li a:hover {
+    background-color: rgb(214, 223, 253);
+    border-left: 4px solid rgb(51, 71, 255);
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background-color: #3D77CB;
+    color: #FFFFFF;
+}
+
+.rcl-standard-search-header {
+    color: #0c0b0b;
+    text-align: left;
+    padding: 0.5rem;
+    background-color: #f4f5f7;
+    margin-bottom: 0rem;
+    font-weight: bold;
+}
+
+.rcl-standard-search-result {
+    font-weight: normal;
+    color: #0c0b0b;
+    text-align: left;
+    padding: 0.5rem;
+    background-color: #dfdfdfe7;
+    text-align: left;
+    margin-bottom: 0rem;
+}
+
+.rcl-standard-search-font {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+
+}
+
+.rcl-standard-component {
+    /*width: 200px;*/
+    width: 100%;
+    border: 1px solid #3366FF;
+    /*border-left: 4px solid #3366FF;*/
+    border-radius: .2rem;
+}
+
+input {
+    /*width: 200px;*/
+    width: 100%;
+    border: 1px solid #3366FF;
+    /*border-left: 4px solid #3366FF;*/
+    border-radius: .2rem;
+}
+
+.styled-select select {
+    /*width: 200px;*/
+    width: 100%;
+    border: 0px solid #3366FF;
+    border-left: 4px solid #3366FF;
+    border-radius: .2rem;
+}
+
+input:required {
+    border-left: 4px solid rgb(255, 51, 51);
+}
+
+/* Decoration for required select */
+select:required {
+    border-left: 4px solid rgb(255, 51, 51);
+}
+
+/* Enable select to be displayed the same as disabled input */
+select[data-dis] {
+    border: 0px;
+    background-color: #E8E8E8;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-left: 5px;
+    color: rgb(84, 84, 84);
+    pointer-events: none;
+}
+
+/* Enable select to be displayed the same as readonly input */
+select[data-rdo] {
+    border: 0px;
+    background-color: #E8E8E8;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-left: 5px;
+    color: black;
+    pointer-events: none;
+}
+
+/* Enable textarea to be displayed the same as readonly input */
+textarea:read-only {
+    border: 0px;
+    background-color: #E8E8E8;
+    padding-left: 5px;
+}
+
+input:disabled {
+    padding-left: 5px;
+    border: 0px;
+    background-color: #E8E8E8;
+    padding-left: 5px;
+}
+
+input:read-only {
+    border: 0px;
+    background-color: #E8E8E8;
+    padding-left: 5px;
+}
+
+input[type=checkbox] {
+	position: relative;
+	cursor: pointer;
+	width: auto;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+input[type=date]:read-only {
+    display: -webkit-inline-box !important;
+    height: 15px;
+} 
+
+input[type=date]:disabled {
+    display: -webkit-inline-box !important;
+    height: 15px;
+} 
+
+input[type=time]:read-only {
+    display: -webkit-inline-box !important;
+    height: 15px;
+} 
+
+input[type=time]:disabled {
+    display: -webkit-inline-box !important;
+    height: 15px;
+}
+
+/* Insert for rcl:text in grid */
+.tblRow .gridRow input:read-only {
+	background-color: transparent;
+	padding-left: 0px; 
+}
+.tblRow .gridRow select[data-rdo] {
+	background-color: transparent;
+	padding-left: 0px; 
+}
+
+.rcl-standard-form-control {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.rcl-standard-input-wrapper {
+    position: relative;
+}
+
+/* Positioning icon behind input */
+.rcl-standard-input-wrapper i {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color: black;
+    font-size: 14px;
+}
+
+/* To fix tooltip color */
+a[data-toggle="tooltip"] {
+	color: #0c0b0b;
+}
+
+i {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rcl-standard-button {
+    font-weight: normal;
+    color: #ffffff;
+    /* Fixed size has problem with long caption */
+    width: auto;
+    height: 18px;
+    border: 0px;
+    /*border-radius:.0rem;*/
+    border-radius: .2rem;
+    background: rgb(134, 135, 139);
+    /* Padding and drop-shadow for decoration */
+    padding: 0px 15px 0px 15px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+}
+
+/* Hover effect */
+.rcl-standard-button:hover {
+    background-color: rgb(214, 223, 253);
+    color: #3D77CB;
+    cursor: pointer;
+}
+
+.rcl-standard-table {
+    font-weight: normal;
+    color: #000000;
+    background-color: #d4e1f5;
+    border-collapse: collapse;
+    width: 95%;
+    /* Fixed font size */
+    font-size: 11px;
+}
+/*
+.rcl-standard-page-footer {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    padding: 0rem;
+    margin-bottom: 0rem;
+    background-color: #7b7d80;
+    border-radius: .0rem;
+    border-top: 4px solid rgb(255, 51, 51);
+}
+*/
+.rcl-standard-input-icon {
+    position: absolute;
+    left: 170px;
+    /* Vertically center icon */
+    top: calc(50% - 0.5em);
+}
+
+.ui-datetimepicker {
+    width: 17em;
+    padding: .2em .2em 0;
+    display: none;
+    background: #2F99B4;
+}
+
+.hidden {
+    display: none;
+}
+
+.ajax_loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.ajax_loader i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* Additional CSS */
+label {
+    margin-bottom: 0px;
+}
+.row {
+    padding-bottom: 5px;
+}
+.rcl-hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.rcl-standard-widget-header {
+    background-color: #3D77CB;
+    color: white;
+    text-align: left;
+    font-size: 11;
+    font-weight: bold;
+    border-radius: .0rem;
+    border-bottom: 2px solid #1e0c86;
+    height: 25px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.rcl-standard-button-header {
+    font-weight: normal;
+    color: black;
+    width: auto;
+    height: 18px;
+    border: 0px;
+    border-radius: .2rem;
+    background: lightgrey;
+}
+
+.rcl-standard-button-header:hover {
+    background-color: rgb(214, 223, 253);
+    color: #3D77CB;
+    cursor: pointer;
+}
+
+.rcl-standard-version-header {
+    font-size: 9px;
+    color: #0c0b0b;
+    text-align: right;
+    background-color: #f4f5f7;
+    padding-right: 5px;
+}
+
+.rcl-tableLeftSub {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 70%;
+    font-weight: normal;
+    color: #003399;
+    text-align: left;
+    height: 20px;
+    padding-left: 2px;
+    background: #E9E7D7;
+    vertical-align: middle;
+    border-bottom: #6A7896 1px solid;
+    border-top: #6A7896 1px solid;
+}
+
+.rcl-tableLeftText {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 105%;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    vertical-align: middle;
+    background: #3E71CC;
+    padding-left: 2pc;
+    height: 20px;
+}
+
+.tblArea {
+    padding-left: 15px;
+}
+
+/*Adjust position of expand/collapse icon in header*/
+.rcl-standard-widget-header > span {
+    padding: 0px 15px 0px 15px;
+    margin-bottom: 15px;
+}
+
+.container-fluid {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Hover on Edit icon*/
+.fa-edit:hover {
+    cursor: pointer;
+}
+
+/* Remove styling for popover and microhelp label */
+a.popover-label {
+	color:black;
+}
+a.microhelp-label {
+	color:black;
+}
+
+/* 
+==================================================================================================== 
+Inserts by Ascan
+====================================================================================================
+*/
+/* Classes to support all the JQuery based dialogs */
+.ui-dialog { font-size: 10px; }
+
+/*ensures that JQuery datepicker is working in modal dialogs*/
+#ui-datepicker-div {z-index:1003 !important;}
+
+/* ensures proper display of datepicker, someone has once increased padding for span */
+.ui-datepicker span { padding:0pc 0px 0px 0px;} /*###01 */
+
+/*
+Classes to support dialog flow
+.rcl-modal          blocks a page against input when a 2Tab flow was used until it returns
+
+Classes to support RCL Power Table paging
+.rptPgBtn            paging buttons of RCL Power Table showing page number or top, bottom
+.rptPgGotoLabel      the label for the goto field
+.rptPgGotoField      the field to enter the goto page
+.rptPgIndicator      the indicator showing the active page and the total number of pages
+
+Classes to support the lookup dialog of RCL Power Table
+.rclLookupDlgBtn        buttons on lookup dialog of RCL Power Table 
+.rclDlgSortDirectionBtn buttons for sort ascending/descending
+.rptSortBtnColor
+
+Classes to support drop down menues e.g. for open ticket and code review
+.rcl-dropdown-content
+
+Classes to support message boxes
+rcl-message
+rcl-messageCode
+
+Classes for the improved column model
+.col-0x5         A column whose width is 0.5 x col-1
+.offset-0x5      A column whose offset is 0.5 x offset-1
+*/
+/*###02 BEGIN*/
+.rcl-modal {
+    display: block; 
+    position: fixed; /* Stay in place */
+    z-index: 1004; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(196,196,196); /* Fallback color */
+    background-color: rgba(196, 196, 196, 0.4); /* Black w/ opacity */
+
+}
+/*###02 END */
+.rcl-dropdown-content {  /*The dropdown menue for open ticket, code review etc*/
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 80px;
+    overflow: auto;
+    top: 50px;
+    left:400px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}  
+.rcl-dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+.rcl-dropdown-content a:hover {
+    background: darkgray; 
+    color: white;
+}
+
+.rptPgIndicator { /*the indicator showing the active page and the total number of pages*/
+    width: 200px;
+    border-color: lightgray;
+    margin-top: 7px;
+    padding-left: 4px;
+    padding-bottom: 3px;
+}
+.rptPgGotoField { /*the field on the paging area where to enter the page number I want to go*/
+    width: 50px;
+    margin-top: 3px;
+    padding-left: 4px;
+    padding-bottom: 3px;
+}
+.rptPgBtn,           /* paging button of RCL Power Table */
+.rclLookupDlgBtn {   /* buttons on lookup dialog of RCL Power Table */
+   /*  -moz-box-shadow: 3px 4px 0px 0px #1564ad;
+    -webkit-box-shadow: 3px 4px 0px 0px #1564ad;
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+    background:-moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%); */
+    
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    background: rgb(134, 135, 139);
+    
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+   /*  background-color:#79bbff; 
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border:1px solid #337bc4; */
+    
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius: .2rem;
+    
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:10px;
+    font-weight:normal;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+}
+.rptPgBtn{  /* paging button of RCL Power Table */
+    /* width: 25px; */	/*Modified by Avanti 8thSep2019 */
+    padding:1px 2px;
+    min-width : 25px;	/*Modified by Avanti 8thSep2019 */
+    margin-left: 2px;
+    text-align: center;
+}
+.rclLookupDlgBtn {  /* buttons on lookup dialog of RCL Power Table */
+    padding:5px 6px;
+}
+
+.rptPgBtn:hover,
+.rclLookupDlgBtn:hover {
+    /* background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+    background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:-o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:-ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
+    background-color:#378de5; */
+    
+    background-color: rgb(214, 223, 253);
+    color: #3D77CB;
+    cursor: pointer;
+    text-decoration: none;
+}
+.rptPgBtn:active,
+.rclLookupDlgBtn:active {
+    position:relative;
+    top:1px;
+}
+/*Ascan 13/12/2018 insert*/
+.rptPgBtn:focus {
+    border: 2px dotted whitesmoke;    
+    border-radius: 5px;
+}
+/*Ascan 13/12/2018 insert*/
+.rptPgBtn.noPointer {
+    pointer-events: none;
+    background: #79bbff;
+}
+
+.rptPgGotoLabel {  /* Paging of RCL Power Table, The label for the goto field*/
+    /* -moz-box-shadow: 3px 4px 0px 0px #1564ad;
+    -webkit-box-shadow: 3px 4px 0px 0px #1564ad; 
+    box-shadow: 3px 4px 0px 0px #1564ad; */
+    
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    
+    /* background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+    background:-moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%); */
+    background: rgb(134, 135, 139);   /* add new color */
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+    /* background-color:#79bbff; */
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius: .2rem;
+    /* border:1px solid #337bc4; */
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:10px;
+    font-weight:normal;
+    padding:1px 2px; /*5px 6px;*/
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+    width: 40px;
+    text-align: center;
+    margin-right: 5px;
+}
+.rptPgGotoLabel:hover {
+    /* background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+    background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:-o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:-ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
+    background-color:#378de5; */
+    background-color: rgb(214, 223, 253);
+    color: #3D77CB;
+    cursor: pointer;
+    text-decoration: none;
+}
+.rptPgGotoLabel:active {
+    position:relative;
+    top:1px;
+}
+
+/* Classes to support the search and paging dialog of RCL Power Table
+*/
+.rclDlgSortDirectionBtn { /*buttons for sort ascending/descending*/
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+    background-color:#f9f9f9;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:10px;
+    padding:1px 2px; /*3px 6px;*/
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.rclDlgSortDirectionBtn:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+    background-color:#e9e9e9;
+}
+.rclDlgSortDirectionBtn:active {
+    position:relative;
+    top:1px;
+}
+
+.rptSortBtnHighlight {
+    text-align: center;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #5cbf2a));
+    background:-moz-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+    background:-webkit-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+    background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+    background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+    background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
+    background-color:#44c767;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:2px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:red !important; /* !important required since _text-emphasis.scss overwrites with own important*/
+    font-family:Arial;
+    font-size:10px;
+    padding:1px 1px !important; /* !important required since _spacing.scss overwrites with own important*/
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+}
+.rptSortBtnHighlight:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
+    background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
+    background-color:#5cbf2a;
+}
+.rptSortBtnHighlight:active {
+    position:relative;
+    top:1px;
+}
+.rptSortBtnColor {
+    text-align:center;
+    /*background-color: #ese02c;*/
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #ccc2a6;
+    display:inline-block;
+    cursor:pointer;
+    /*color:#343a40;  no need to specify _text_empasis.scss has an !important here */
+    font-family:Arial;
+    font-size:10px;
+    padding:1px 1px !important;/* !important required since _spacing.scss overwrites with own important*/
+    text-decoration:none;
+    text-shadow:0px 0px 0px #2f6627;
+}
+.rptSortBtnColor:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
+    background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+    background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
+    background-color:#5cbf2a;
+}
+.rptSortBtnColor:active {
+    position:relative;
+    top:1px;
+}
+/* The following is the improved column model
+col-0x5 means: A column whose width is 0.5 x col-1*/
+.col-0x25 {
+    -ms-flex: 0 0 2.08333333%;
+    flex: 0 0 2.08333333%;
+    max-width: 2.08333333%;     
+}
+.offset-0x25 {
+    margin-left: 2.08333333%;
+}
+.col-0x5 { 
+    -ms-flex: 0 0 4.1666665%;
+    flex: 0 0 4.16666653%;
+    max-width: 4.1666665%;    
+}
+.offset-0x5 {
+    margin-left: 4.1666665%;
+}
+.col-0x75 {
+	-ms-flex: 0 0 6.2555555%;
+    flex: 0 0 6.2555555%;
+    max-width: 6.2555555%; 
+}
+.offset-0x75 {
+	margin-left: 6.2555555%; 
+}
+.col-1x25 {
+    -ms-flex: 0 0 10.41666667%;
+    flex: 0 0 10.41666667%;
+    max-width: 10.41666667%; 
+    padding:  0px 15px 0px;   
+}
+.offset-1x25 {
+    margin-left: 10.41666667%;
+}
+.col-1x5 {
+    -ms-flex: 0 0 12.5%;
+    flex: 0 0 12.5%;
+    max-width: 12.5%; 
+    padding:  0px 15px 0px;
+}
+.offset-1x5 {
+    margin-left: 12.5%;
+}
+.col-1x75 {
+	-ms-flex: 0 0 14.58333333%;
+    flex: 0 0 14.58333333%;
+    max-width: 14.58333333%;  
+}
+.offset-1x75 {
+	margin-left: 14.58333333%;
+}
+/*###03 BEGIN */
+.rcl-message, .rcl-messageCode {
+    /*text-align: center !important; ###06 */ /* ex Bootstrap "text-center", important was defined that way by Bootstrap, des not work withou */
+    /*background-color: #17a2b8 !important; ###06 */ /* ex Bootstrap "bg-info",important was defined that way by Bootstrap, des not work withou */
+    padding-top: 0 !important; /* see above, BS "pt-0" */
+    padding-bottom: 0!important; /* see above, BS "pb-0" */
+    margin-top: 0 !important; /* see above, BS "mt-0" */
+    margin-bottom: 0 !important;
+    /*color: #fff; ###06 */  /* text-white */
+}
+.rcl-messageCode {
+    font-size: 0.75rem; /* bootstrap "lead" is 1.25rem  */
+    font-weight: 300;
+}
+/*###03 END */
+/* Insert for edit dialog style follow RCL commented 24/12/2018*/
+.ui-widget-header {
+	background: #3D77CB;
+}
+.ui-widget.ui-widget-content {
+	border: 1px solid #3D77CB;
+}
+.ui-button {
+	font-weight: normal;
+    color: #ffffff;
+    /* Fixed size has problem with long caption */
+    width: auto;
+    height: 18px;
+    border: 0px;
+    border-radius: .2rem;
+    background: rgb(134, 135, 139);
+    /* Padding and drop-shadow for decoration */
+    padding: 0px 15px 0px 15px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+    box-shadow: 1px 1px 5px 0px rgba(163, 163, 163, 1);
+}
+.ui-button:hover {
+    background: rgb(214, 223, 253);
+    color: #3D77CB;
+    cursor: pointer;
+    border: 0px;
+}
+.ui-button .ui-icon {
+	background-image: url("https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/ui-lightness/images/ui-icons_ffffff_256x240.png");
+}
+.ui-widget-content {
+	border: 1px solid #3D77CB;
+}
+
+/*###04 BEGIN Styles for popover dialog */
+.rclPopoverColumnHdr { /*Style of column headers*/
+    background-color:grey;
+    color: white;
+    text-align: center;
+    font-weight: bold;    
+    padding: 3px !important;
+    padding-right: 5px !important;
+    border-color:  black !important;
+    margin:0;    
+}
+.rclPopoverElement,
+.rclPopoverLabel { /*Style of field names and valuees */
+    padding: 3px !important;
+    padding-right: 5px !important;
+    border-style: inset !important;
+    margin:0;
+}
+.rclPopoverLabel {/* The field names have bold*/
+    font-weight: bold; 
+}
+.rclPopoverElementEven {/* style of even numbered rows*/
+    color: rgb(65, 64, 64); /*very dark grey */
+    background-color: lightgrey;
+    border-color: grey !important;
+}
+.rclPopoverElementOdd { /* style of odd numbered rows*/
+    color: white;
+    background-color: darkgrey;      
+    border-color: grey !important; 
+}
+.rclPopoverCol1 { 
+    width: 100px;/* width of 1st column */
+}
+.rclPopoverCol2 {
+    width: 150px;/* width of 2nd column */
+}
+/* d99Popover-dlg is the id of the popover dialog box */
+#d99Popover-dlg {
+    display: flex;
+    justify-content: center;
+}
+/*The below trick to let tbody scroll but freeze thead comes from https://medium.com/@vembarrajan/html-css-tricks-scroll-able-table-body-tbody-d23182ae0fbc */
+/* d99Detail is the id of <table> inside the popover dialog*/
+#d99Detail thead {
+    display:table;
+    width:250px;  
+} 
+#d99Detail tbody {
+    display:block;
+    overflow:auto;
+    max-height:300px;
+    width:267px;   
+}
+/* This class is attached to any even row (index based 0) in a power table (the tblRow itself) and removed from odd rows*/
+.rptEvenRow {
+    background-color:#f8f9fa;/* This is Bootstrap bg-light*/
+}
+/* This class is attached to any odd row (index based 0) in a power table (the tblRow itself) and removed from even rows*/
+.rptOddRow {
+    background-color: white;
+}
+/*###04 END Styles for popover dialog */
+    /*###05 BEGIN Styles for lookup*/ 
+#t99Lookup-dlg {
+    box-sizing: content-box;
+    font-size: 10px;  
+    border: #6A7896 1px solid;
+    overflow-y:hidden;
+    overflow-x:auto;
+}
+.rcl-lkHeader {
+    padding-left: 15px;
+}
+.rcl-lkHeaderRow {
+    display:flex;
+    flex-wrap:nowrap;
+    margin:0;
+}
+.rcl-lkHeaderCell {
+    border: #6A7896 1px solid;
+    padding: 3px; 
+    flex-grow:0;
+    flex-shrink:0;
+    font-weight:bold;
+}	
+.rcl-lkArea {
+    overflow-y:scroll;
+    height: 400px;
+}
+.rcl-lkAreaRow {
+    display:flex;
+    flex-wrap:nowrap;
+    margin:0;
+}
+.rcl-lkAreaCell {
+    border: #6A7896 1px solid;
+    padding: 3px; 
+    flex-grow:0;
+    flex-shrink:0;
+    word-wrap:break-word;
+}
+#t99paging {
+    width:450px;
+    padding-right:15px;
+}
+/*###05 END Styles for lookup */

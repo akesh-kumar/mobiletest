@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+
+   <tlib-version>1.1</tlib-version>
+   <jsp-version>2.0</jsp-version>
+   <short-name>RCL Custom Tag Library</short-name>
+   
+   
+   <tag>
+		<name>text</name>
+		<description>An input tag of type text together with an optional lable and optional lookup</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagText</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>lookup</name>
+			<description>A lookup function to use and the parameter. Parameters are:
+			    tbl(..) The name of the view or table from where to read the values
+				rco(..) A space separated list of columns whose value should be moved to the elements mention in rid() after selecting one record.
+				rid(..) A space separated list of element ids of the elements to receive selected values
+				Further optional parameters:
+				sco(..) A space separated list of columns which should be use to select from the table rows to display
+				sva(..) A space separated list of values which shall be used to compare the columns from sco(..). 
+				Values could be element ids or constants or SQL expressions. Constants must be put in quotes.
+				Id element ids are used, then the column is used for selection only, if the respective element has a value. If not the 
+				selection by this column is ignored.
+				sop(..) A list of operators to compare the select columns with the values. Default is =
+				tit(..) An optional titel for the dialog box. the default title is automatically created from the table name.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				upc: uppercase
+				dec(m,n): m-digits of which n are after the decimal
+				min(n): input must be less thann n
+				max(n):input must be greater than n
+				pat(): A regular expression pattern
+				req: required
+				len(n): maximum length of input is n
+				siz(n): field size shall be n
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display in the same place as lookup and will overwrite lookup icon and functionality.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+		<attribute>
+			<name>autoLookup</name>
+			<description>
+			  Indicates whether upon input the system should automatically check against database and display additional values.
+				Y: Checks with same selections as specified under lookup
+				If you want additional specifications on top of what was specified under lookup, you need put instead of Y sco and sva into it.
+				sco(...) The columns which shall be used in addition to the sco(...) under lookup
+				sva(...) The values which shall be checked in addition to sva(...) under lookup
+				sop(...) The operators which are used in addition to sop(...) under lookup. LIKE operator will be used to fill up missing operator in sop taken from lookup
+				N(): Exclude condition specified under lookup from autolookup
+				pop(): Use popover dialog (requires label)
+			</description>
+		</attribute>
+	</tag>
+
+   <tag>
+		<name>number</name>
+		<description>An input tag of type number together with an optional lable and optional lookup</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagNumber</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>lookup</name>
+			<description>A lookup function to use and the parameter</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				upc: uppercase
+				dec(m,n): m-digits of which n are after the decimal
+				min(n): input must be less than n
+				max(n):input must be greater than n
+				pat(): A regular expression pattern
+				req: required
+				len(n): maximum length of input is n
+				siz(n): field size shall be n
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+		<attribute>
+			<name>step</name>
+			<description>
+				The number by which pressing up/down or a spinner shall increase or decrease the value. Default is "1". Could be any decimal like "0.1".
+			</description>
+		</attribute>
+		<attribute>
+			<name>withSpinner</name>
+			<description>
+				Whether right to the input field up/down buttons should be placed, which will increase or decrease the value by the amount given in step.
+			</description>
+		</attribute>
+	</tag>
+
+  
+  
+  <tag>
+		<name>select</name>
+		<description>A select tag of type together with an optional lable and micro help.
+		The tag can have the option values explicitly set by the parameters optionsList and valueList
+		or can receive these values from a standard select table given by the parameter selectTable.
+		If the tag is required, an option showing the label + a ? is shown to indicate, that 
+		there needs to be a value.
+		If the tag is optional an empty option is automatically inserted. In this case parameter
+		emptyDisplay can be used to set a display text for such option. This is useful when a select 
+		tag is used within a search area.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagSelect</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only = read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>selectTable</name>
+			<description>The name of a standard RCL select table to use</description>		
+		</attribute>
+		<attribute>
+			<name>valueList</name>
+			<description>A space separated list of select values</description>		
+		</attribute>
+		<attribute>
+			<name>optionsList</name>
+			<description>A space separated list of select options to display</description>		
+		</attribute>	
+		<attribute>
+			<name>emptyDisplay</name>
+			<description>A text to be displayed for optional fields instead of a space like Select One</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+	</tag>
+
+   <tag>
+		<name>date</name>
+		<description>An input tag of type date. By framework automatically a date picker is attached to it.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagDate</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page.
+				Date tags support the following additional default values:
+				+-n today +/- n-days
+				today
+				yesterday
+				tomorrow
+				first|last of last|this|next month
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+				pat(): A regular expression pattern
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>area</name>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagArea</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+		<attribute>
+			<name>title</name>
+			<description>The header title of the search area</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				btn(): classes to be added to the buttons,
+				row(): classes to be added to area footer which only available if using search area mode or use new button.
+			</description>
+		</attribute>
+		<attribute>
+			<name>areaMode</name>
+			<description>
+				Set area mode. Default to "detail" 
+				If "detail": the area will be rendered as detail area.
+				If "search": the area will be rendered as search area which includes find and reset button. 
+				The page must contain find() function.
+				If "table": the area will be rendered as Powertable.
+			</description>
+		</attribute>
+		<attribute>
+			<name>newBtn</name>
+			<description>
+				Whether a new button is required. If required, the page must contain 
+				newData() function to intercept button click.
+			</description>		
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<description>
+				Whether the area is collapsible.
+			</description>		
+		</attribute>
+		<attribute>
+			<name>useHeader</name>
+			<description>
+				Whether the area uses area header or not.
+			</description>		
+		</attribute>
+		<attribute>
+			<name>buttonList</name>
+			<description>
+				A space separated list of caption of buttons that will be rendered to footer.
+				Buttons from this attribute will overwrite newBtn and search area default buttons
+			</description>		
+		</attribute>
+		<attribute>
+			<name>onClickList</name>
+			<description>
+				A space separated list of function name to go with button in buttonList.
+			</description>		
+		</attribute>
+		<attribute>
+			<name>buttonIdList</name>
+			<description>
+				A space separated list of button ID to go with button in buttonList.
+			</description>		
+		</attribute>
+		<attribute>
+			<name>hidden</name>
+			<description>
+				Whether the area is hidden by default.
+			</description>		
+		</attribute>
+		<attribute>
+			<name>headerOptions</name>
+			<description>
+				Additional attribute to add to area header. Setting this attribute will make the tag 
+				ignores hidden attribute
+			</description>		
+		</attribute>
+		<attribute>
+			<name>areaOptions</name>
+			<description>
+				Additional attribute to add to area. Setting this attribute will make the tag ignores
+				hidden attribute
+			</description>		
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<name>tabGroup</name>
+		<description>A series of tabs which can contain several tab panes with more details. 
+		Tab panes are defined by tabContentPane.
+		A complete tabGroup is defined by:
+		tabGroup (Begin)
+		....tabContentPane 1 (Begin)
+		........content of pane 1
+		....tabContentPane 1 (End)
+		....tabContentPane 2 (Begin)
+		........content of pane 2
+		....tabContentPane 2 (End)	
+		tabGroup (End)						
+		</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagTabGroup</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>tabList</name>
+			<required>true</required>
+			<description>A space separated list of tab names. Spaces in tab names are replaced by underscore for display</description>
+	 	</attribute>
+		<attribute>
+			<name>activeTab</name>
+			<required>true</required>
+			<description>The name of the tab which shall be active as it appears in tabList (with underscore)</description>
+	 	</attribute>
+	</tag>
+	<tag>
+		<name>tabContentPane</name>
+		<description>The frame of one content pane controlled by a list of tabs.
+		This custom tag must be placed inside a tabGroup tag.
+		The content of a tab needs to be placed between the begin and end tag of this custom tag.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagTabContentPane</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>tabName</name>
+			<required>true</required>
+			<description>The name of the tab as it appears in the tabList of the tab group (with underscore)</description>
+	 	</attribute>
+	</tag> 
+
+	<tag>
+		<name>dialog</name>
+		<description>The frame of a modal or nonmodal dialog for display or input of data.
+		The content of the dialg needs to be placed in between the start and end tag of this custom tag.
+		The dialog can be opened with rutOpenDialog(dialogId).
+		The dialog can be closed with rutCloseDialog(dialogId).</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagDialog</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element. Default is b0-area.</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>buttonList</name>
+			<description>A space separated list of button names</description>
+		</attribute>
+		<attribute>
+			<name>onClickList</name>
+			<description>A space separated list of functions calls for click on the respective button</description>
+		</attribute>
+		<attribute>
+			<name>cancelMethod</name>
+			<description>The method to be called upon cancellation</description>
+		</attribute>
+	    <attribute>
+        	<name>title</name>
+        	<description>The title of the dialog box</description>
+		</attribute>
+		<attribute>
+			<name>modal</name>
+			<description>True or false depending on whether the dialog box is modal or not. Default is modal
+			</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<description>The width of the dialog in pixel. Default is auto.</description>		
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<description>The height of the dialog in pixel. Default is auto.</description>		
+		</attribute>
+		<attribute>
+			<name>maxWidth</name>
+			<description>The maximum width of the dialog in pixel.</description>		
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<description>The maximum height of the dialog in pixel.</description>		
+		</attribute>
+		<attribute>
+			<name>minWidth</name>
+			<description>The minimum width of the dialog in pixel.</description>		
+		</attribute>
+		<attribute>
+			<name>minHeight</name>
+			<description>The mainimum height of the dialog in pixel.</description>		
+		</attribute>
+        <attribute>
+			<name>draggable</name>
+			<description>Whether the dialog can be dragged by the user. Default is true.</description>		
+		</attribute>
+        <attribute>
+			<name>resizable</name>
+			<description>Whether the user can resize the dialog. Default is true.</description>		
+		</attribute>
+        <attribute>
+			<name>position</name>
+			<description>Allows to specify the position of the dialog relative to another element. Please refer to JQuery Dialog API for details.</description>		
+		</attribute>
+	</tag>
+
+  <tag>
+		<name>stdShipmentType</name>
+		<description>A specialized select tag displaying the standard select table shipmentType.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdShipmentType</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed. Default: Shipm.Type</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>emptyDisplay</name>
+			<description>A text to be displayed for optional fields instead of a space like Select One</description>		
+		</attribute>
+	</tag>
+
+  <tag>
+		<name>stdDirection</name>
+		<description>A specialized select tag displaying the standard select table direction.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdDirection</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>emptyDisplay</name>
+			<description>A text to be displayed for optional fields instead of a space like Select One</description>		
+		</attribute>
+	</tag>
+  <tag>
+		<name>stdVessel</name>
+		<description>A specialized input tag which automatically provides a lookup table for vessel. It also provides
+		a label (Vessel) and check=len(5) upc.
+		If the field is display only, then there will be no lookup table.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdVessel</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+		<attribute>
+			<name>nameId</name>
+			<description>The id of an html element, which shall display the vessel name</description>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+
+	</tag>
+
+  <tag>
+		<name>stdPort</name>
+		<description>A specialized input tag which automatically provides a lookup table for port. It also provides
+		check=len(5) and upc.
+		If the field is display only, then there will be no lookup table.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdPort</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+		<attribute>
+			<name>nameId</name>
+			<description>The id of an html element, which shall display the port name</description>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+
+	</tag>
+
+  <tag>
+		<name>stdPoint</name>
+		<description>A specialized input tag which automatically provides a lookup table for inland points. It also provides
+		check=len(5) and upc.
+		If the field is display only, then there will be no lookup table.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdPoint</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+		<attribute>
+			<name>nameId</name>
+			<description>The id of an html element, which shall display the location name</description>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+
+	</tag>
+
+  <tag>
+		<name>stdService</name>
+		<description>A specialized input tag which automatically provides a lookup table for service. It also provides
+		a label (Service) and check=len(5) upc.
+		If the field is display only, then there will be no lookup table.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdService</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+
+	</tag>
+
+  <tag>
+		<name>stdVoyage</name>
+		<description>A specialized input tag which automatically provides a lookup table for voyage. It also provides
+		a label (Voyage) and check=len(10) upc.
+		If the field is display only, then there will be no lookup table.
+		</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdVoyage</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				std: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>serviceId</name>
+			<description>The html id of a service field. this field would be filled from the selected voyage and any input into this field would
+			be used to filter the displayed voyages.</description>		
+		</attribute>
+		<attribute>
+			<name>vesselId</name>
+			<description>The html id of a vessel field. this field would be filled from the selected voyage and any input into this field would
+			be used to filter the displayed voyages.</description>		
+		</attribute>
+		<attribute>
+			<name>directionId</name>
+			<description>The html id of a direction field. this field would be filled from the selected voyage and any input into this field would
+			be used to filter the displayed voyages.</description>		
+		</attribute>		
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+	</tag>
+  	<tag>
+		<name>stdFSC</name>
+		<description>A specialized input tag which automatically provides a lookup table for FSCs. It also provides
+		a label (FSC) and check=len(3) upc.
+		If the field is display only, then there will be no lookup table.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.StdFSC</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+		<attribute>
+			<name>nameId</name>
+			<description>The id of an html element, which shall display the FSC name</description>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+
+	</tag>
+
+   <tag>
+		<name>time</name>
+		<description>An input tag of type time.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagTime</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+				pat(): A regular expression pattern
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+	</tag>
+   <tag>
+		<name>tel</name>
+		<description>An input tag of type tel to be used for any kind of phone or fax number.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagTel</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+				pat(): A regular expression pattern
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+	</tag>
+
+   <tag>
+		<name>email</name>
+		<description>An input tag of type email to be used for any kind email address.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagEmail</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+				pat(): A regular expression pattern
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+	</tag>
+
+   <tag>
+		<name>url</name>
+		<description>An input tag of type url to be used for any kind of web page address</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagUrl</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+				pat(): A regular expression pattern
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<description>
+				Bootstrap's FontAwesome icon class to display.
+				The icon will be display at the end of select dropdown.
+			</description>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<description>
+				Expression for onclick of icon set by icon attribute
+			</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>map</name>
+		<description>A tag for generating SelectTable map with js function to retrieve value from code using $mapToValue(table, code)
+		For the list of standard select tables given under the parameter selectTable a js map function $mapToValue(table,code) is generated, 
+		which maps the code to values for use on html pages.
+		</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagDataMap</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>selectTable</name>
+			<required>true</required>
+			<description>A list of stabdard select tables which shall be extracted into the map</description>
+	 	</attribute>
+	</tag>
+    <tag>
+		<name>valueMap</name>
+		<description>Similar to rcl:map. Deprecated, please use rcl:map</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagDataMap</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>table</name>
+			<required>true</required>
+			<description>Space separated list of StdSelectTables</description>
+	 	</attribute>
+	</tag>
+   <tag>
+		<name>slider</name>
+		<description>An input element which allows to set a numberic value by dragging
+		 a handle between a minimum and a maximum. Can be enriched by additional input 
+		 field, spinner and value display.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagSlider</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+				dec(m,n): m-digits of which n are after the decimal
+				min(n): input must be less than n. Default=0
+				max(n):input must be greater than n. Default=100
+			</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>withSpinner</name>
+			<description>
+				Whether right to the spinner buttons to increase/decrease the value should be placed.
+				Value: "Y" place a spinner. Default is "N".
+			</description>
+		</attribute>
+		<attribute>
+			<name>withValueDisplay</name>
+			<description>
+				Whether the actual value shall be displayed at the right side of the lable.
+				Value: "Y" display the value. Default is "Y".
+			</description>
+		</attribute>
+		<attribute>
+			<name>withIntegratedField</name>
+			<description>
+				Whether a numeric field shall be available right to the slider, which will allow a manual input.
+				Value: "Y" place an input field. Default is "N".
+			</description>
+		</attribute>
+		<attribute>
+			<name>step</name>
+			<description>
+				In case of a withSpinner="Y" or an withIntegratedField="Y" the amount by which the value is 
+				increased or decreased. Default=1. Could be any decimal like "0.1".
+				"step" has no impact on the slider. The slider can still set any value.
+			</description>
+		</attribute>
+		<attribute>
+			<name>syncElement</name>
+			<description>
+				It is possible to show the actual value of the slider in a completeley different field of the page.
+				If this is requested this attribute gives the html id of that field.
+			</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>multiSelect</name>
+		<description>An element which looks like a select tag but allows to select many values together with an optional lable and micro help.
+		The tag can have the option values explicitly set by the parameters optionsList and valueList
+		or can receive these values from a standard select table given by the parameter selectTable.
+		If the tag is required, an option showing the label + a ? is shown to indicate, that 
+		there needs to be a value.
+		If the tag is optional an empty option is automatically inserted. In this case parameter
+		emptyDisplay can be used to set a display text for such option. This is useful when a select 
+		tag is used within a search area.</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagMultiSelect</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>itemClick</name>
+			<description>A Javascript function to be called, when an individual selected item is clicked.
+			The function will be provided with the following parameters:
+			id:		The id of the multiSelect element
+			value:	The value of the element being clicked
+			event:	The click event object
+			item:	The element being clicked upon. This element has an attribute data-id, which is
+					the displayed option.
+			</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: disabled
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>options</name>
+			<description>Other attributes to assign to the control</description>		
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>selectTable</name>
+			<description>The name of a standard RCL select table to use</description>		
+		</attribute>
+		<attribute>
+			<name>valueList</name>
+			<description>A space separated list of select values</description>		
+		</attribute>
+		<attribute>
+			<name>optionsList</name>
+			<description>A space separated list of select options to display</description>		
+		</attribute>	
+		<attribute>
+			<name>emptyDisplay</name>
+			<description>A text to be displayed for optional fields instead of a space like Select One</description>		
+		</attribute>
+	</tag>
+   <tag>
+		<name>radioGroup</name>
+		<description>An input tag of type text together with an optional lable and optional lookup</description>
+		<tag-class>com.rclgroup.dolphin.web.customtag.SimpleCustomTagRadioGroup</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<description>The id of the created html element</description>
+			<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+			<name>label</name>
+			<description>The label to be displayed</description>
+		</attribute>
+		<attribute>
+			<name>classes</name>
+			<description>A list of classes to be added to the individual parts. The list can 
+				contain the following subparts: 
+				div(): classes to be added to the overall component,
+				lbl(): classes to be added to the lable,
+				ctr(): classes to be added to the control 
+			</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<description>A value to assign to the control when opening the page</description>
+		</attribute>
+	    <attribute>
+        	<name>microHelp</name>
+        	<description>A short description which shows up when mouse moves over the field</description>
+		</attribute>
+		<attribute>
+			<name>check</name>
+			<description>A list of rules which values need to observe.
+				dis: display only
+				rdo: read only
+				req: required
+			</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<description>The name attribute</description>		
+		</attribute>
+		<attribute>
+			<name>selectTable</name>
+			<description>The name of a standard RCL select table to use</description>		
+		</attribute>
+		<attribute>
+			<name>valueList</name>
+			<description>A space separated list of values</description>		
+		</attribute>
+		<attribute>
+			<name>optionsList</name>
+			<description>A space separated list of option labels to display. 
+			If the list is empty, no descriptive labels are placed to the right of the radio button.</description>		
+		</attribute>
+		<attribute>
+			<name>iconType</name>
+			<description>If set the default radio button is replaced by
+			a font awesome icon (value "fas").
+			an image (value "img").
+			a colored circle (value "trafficLight").
+			</description>		
+		</attribute>
+		<attribute>
+			<name>iconList</name>
+			<description>A space separated list of icons to use instead of radio buttons.
+			Requires the attribute "iconType" and the meaning depends on the value of it.
+			a list of font awesome icons.
+			a list of image url.
+			a list of css colors. 
+			</description>		
+		</attribute>
+		<attribute>
+			<name>withBox</name>
+			<description>Whether a box shall be drawn around the whole control.
+			Values "Y"=with box or "N" without box (default). 
+			</description>		
+		</attribute>
+		<attribute>
+			<name>maxCols</name>
+			<description>By default the radio buttons are placed in one row. 
+			If maxCols is specified by an integer number (e.g. 4), then after latest this
+			number of buttons a new row is inserted into the element. 
+			</description>		
+		</attribute>
+	</tag>
+  </taglib>

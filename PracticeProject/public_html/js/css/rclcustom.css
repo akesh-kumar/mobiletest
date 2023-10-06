@@ -1,0 +1,43 @@
+/*****Modified by Avanti 8thSep2019***/
+.fieldReadOnly{
+	background-color: #E8E8E8;
+    border: 0px !important;
+    padding-left: 5px;
+}
+
+.readOnlyEnable{
+	background-color: transparent;
+	padding-left: 0px;
+	border: 0px;
+	cursor: default;
+}
+
+.selectArrowDisable::-ms-expand {
+	display:none;
+}
+
+/*****Modified by Avanti 8thSep2019***/
+
+/*****Multiselect dropdown css***/
+.selectize-control.multi .selectize-input > div {
+	padding: 0px 2px !important;
+	margin : 0 3px 0 0 !important;
+}
+
+.selectize-input {
+	padding: 0px !important;
+	font-size:10px  !important;
+	font-weight: normal !important;
+	border: 1px solid #3366FF !important;
+	height:18px;
+}
+
+.selectize-dropdown, .selectize-input, .selectize-input input {
+	font-size:10px  !important;
+	font-weight: normal !important;
+}
+
+.selectize-dropdown {
+	border: 1px solid #3366FF !important;
+}
+/*****Multiselect dropdown css***/

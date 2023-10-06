@@ -1,0 +1,59 @@
+
+input[type=checkbox] {
+	width: auto;
+	margin-top: 0px;
+	margin-left: 5px;
+	position: relative;
+	cursor: pointer;
+}
+
+  
+.blactivity{
+text-decoration: underline !important;
+cursor: pointer;
+color: blue;
+  
+}
+ 
+ 	.listsearch {
+	margin-bottom: 0px;
+	font-weight: 500;
+	word-wrap: break-word;
+}
+
+.disblePointer-i-icon{
+	pointer-events : none
+}
+ 
+ body{
+ overflow-x: hidden;
+ 
+  }
+  
+  .tblAreaPadding {
+    padding-left: 0; 
+}
+
+ 
+.rptPgIndicator {
+
+min-width: 200px;
+
+}
+
+.rptPgBtn {
+
+min-width: 30px;
+
+
+}
+
+.rptPgGotoLabel {
+
+min-width: 40px;
+}
+
+.rptPgGotoField {
+min-width: 50px;
+}
+ 

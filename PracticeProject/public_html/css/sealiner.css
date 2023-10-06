@@ -1,0 +1,740 @@
+/* DCS Minimal re-design  for R1.1*/
+BODY 
+{
+	FONT-FAMILY		: Verdana,Arial,Helvetica,sans-serif; 
+	FONT-SIZE		: 10px; 
+	font-weight		: normal; 
+	background		: #EFEFEB;
+	MARGIN-LEFT		: 1px; 
+	MARGIN-RIGHT	: 1px; 
+	MARGIN-TOP		: 1px;
+}
+
+.PageTitle { 
+	FONT-WEIGHT			: bold;
+	FONT-SIZE			: 105%;
+	COLOR				: #FFFFFF; /* changed color  from orange*/
+	TEXT-ALIGN			: left;
+	HEIGHT				: 25px;
+	BACKGROUND			: #3D77CB; /* changed color from 3B78CB */
+	VERTICAL-ALIGN		: middle;
+	BORDER-TOP			: #3162a6 2px solid; /* changed color  from 30476C*/
+	BORDER-BOTTOM		: #FF0000 2px solid; /* changed color */
+	PADDING-RIGHT		: 2px; /* new */
+	PADDING-LEFT		: 2px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#9935ADFF'); /* add filter gradient */
+}	
+.PageTitleRight {
+	FONT-WEIGHT			: bold;
+	FONT-SIZE			: 105%;
+	COLOR				: #ffffff; /* changed color */
+	TEXT-ALIGN			: right;
+	HEIGHT				: 25px;
+	BACKGROUND			: #3D77CB; /* changed color from 3B78CB */
+	VERTICAL-ALIGN		: middle;
+	BORDER-TOP			: #3162a6 2px solid; /* changed color  from 30476C*/
+	BORDER-BOTTOM		: #FF0000 2px solid; /* changed color */
+	PADDING-RIGHT		: 2px; /* new */
+	PADDING-LEFT		: 2px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#9935ADFF'); /* add filter gradient */
+}	
+.TableLeftFirst { 
+	height			:	20px;
+	PADDING-LEFT	: 	2px;
+	BORDER-BOTTOM	: 	#C5C1B1 2px  solid; 
+	BORDER-TOP		: 	#C5C1B1 1px solid;
+	vertical-align	:	middle;
+	text-align		:	center;
+	BACKGROUND		: 	#D2D0BD;
+	COLOR			:	#000000;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%
+}
+
+.TableLeftSelected { 
+	height			:	20px;
+	PADDING-LEFT	: 	2px;
+	vertical-align	:	middle;
+	text-align		:	left;
+	BACKGROUND		: 	#ADC3E7;
+	COLOR			:	#000000;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%
+}
+
+.TableLeftTotal{
+        height			:	20px;
+	text-align		        :	left;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	       Bold; 
+	FONT-SIZE		:	70%;
+	/* COLOR			: 	#000000;*/ /* changed color  from #000000*/
+	BACKGROUND		: 	yellow; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	        :	middle;
+	PADDING-LEFT	: 	2px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+    
+}
+.TableLeftSub { 
+	height			:	20px;
+	text-align		:	left;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%;
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	:	middle;
+	PADDING-LEFT	: 	2px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+}
+.TableCenterSub { 
+	height			:	20px;
+	text-align		:	center;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%;
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	:	middle;
+	PADDING-LEFT	: 	2px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+}
+.TableCenterSubNoBottom { 
+	height			:	20px;
+	text-align		:	center;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%;
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	:	middle;
+	PADDING-LEFT	: 	2px;
+	/* BORDER-BOTTOM 	:	#6A7896 1px solid;  changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+}
+.TableCenterSubNoTop { 
+	height			:	20px;
+	text-align		:	center;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%;
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	:	middle;
+	PADDING-LEFT	: 	2px;
+        BORDER-BOTTOM 	:	#6A7896 1px solid;  /*changed color and px*/
+	/*BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+}
+.TableLeftSubColor {
+	height 			:	20px;
+	PADDING-LEFT 	: 	2px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+	vertical-align 	:	middle;
+	text-align 		:	left;
+	BACKGROUND 		: 	#D2DEEB;
+	COLOR 			:	#000000;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	70%
+}
+.TableLeftSubNum {
+	height 			:	20px;
+	PADDING-RIGHT 	:	2px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+	vertical-align 	:	middle;
+	text-align 		:	right;
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	70%;
+}
+.TableLeftText { 
+	FONT-FAMILY		: 	Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE 		:	70%;
+	FONT-WEIGHT		: 	bold; /*changed weight */
+	BACKGROUND		: 	none transparent scroll repeat 0% 0%;
+	COLOR			: 	#ffffff;
+	TEXT-ALIGN		: 	left;
+	VERTICAL-ALIGN	: 	middle;
+	BACKGROUND		:	#3E71CC; /* changed color from 7288AC */
+	PADDING-LEFT	: 	2px;
+	HEIGHT			: 	20px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#9935ADFF'); /*  added gradient  */
+}
+.TableLeftLinks { 
+	height			:	20px;
+	PADDING-RIGHT	: 	10px;
+	vertical-align	:	middle;
+	text-align		:	right;
+	BACKGROUND		:	#3D77CB; /* changed color  from 7288AC*/
+	COLOR			:	#FFFFFF;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	bold; 
+	FONT-SIZE		:	70%;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#9935ADFF'); /*  added gradient  */
+}
+
+.TableLeftSubBtn { 
+	height			:	20px;
+	BORDER-BOTTOM	: 	#C5C1B1 1px solid; 
+	BORDER-TOP		: 	#C5C1B1 1px solid;
+	PADDING-LEFT	: 	2px;
+	vertical-align	:	middle;
+	text-align		:	right;
+	BACKGROUND		: 	#E9E7D7;
+	COLOR			:	#000000;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	bold; 
+	FONT-SIZE		:	70%;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* added border  */
+	BORDER-TOP 		:	#6A7896 1px solid; /* added border */
+}
+.TableLeftWhite { 
+	height			:	20px;
+	PADDING-LEFT	: 	2px;
+	vertical-align	:	middle;
+	text-align		:	left;
+	BACKGROUND		: 	#ffffff;
+	COLOR			:	#000000;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%
+}
+.TableLeftWhiteTop { 
+	height			:	20px;
+	PADDING-LEFT	        : 	2px;
+	vertical-align	        :	top;
+	text-align		:	left;
+	BACKGROUND		: 	#ffffff;
+	COLOR			:	#000000;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%
+}
+.TableRightWhite {
+	height 			: 	20px;
+	PADDING-LEFT 	: 	2px;
+	vertical-align 	: 	middle;
+	text-align 		: 	right;
+	BACKGROUND 		: 	#ffffff;
+	COLOR 			: 	#000000;
+	FONT-FAMILY 	: 	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	: 	normal;
+	FONT-SIZE 		: 	70%
+}
+.TableRightWhiteTop {
+	height 			: 	20px;
+	PADDING-LEFT 	        : 	2px;
+	vertical-align 	        : 	top;
+	text-align 		: 	right;
+	BACKGROUND 		: 	#ffffff;
+	COLOR 			: 	#000000;
+	FONT-FAMILY 	        : 	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	        : 	normal;
+	FONT-SIZE 		: 	70%
+}
+.TableLeftWhiteNum {
+	height 			:	20px;
+	PADDING-RIGHT 	: 	2px;
+	vertical-align 	:	middle;
+	text-align 		:	right;
+	BACKGROUND 		: 	#ffffff;
+	COLOR 			:	#000000;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	70%
+}
+.TableLeftWhite {
+	height 			:	20px;
+	PADDING-LEFT 	: 	2px;
+	vertical-align 	:	middle;
+	text-align 		:	left;
+	BACKGROUND 		: 	#ffffff;
+	COLOR 			:	#000000;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	70%
+}
+.TableLeftWhiteHighlight {
+	text-align 		:	right;
+	PADDING-RIGHT 	: 	2px
+}
+.TableLeftWhiteRepHead {
+	height 			:	20px;
+	PADDING-LEFT 	: 	2px;
+	vertical-align 	:	middle;
+	text-align 		:	left;
+	BACKGROUND 		: 	#ffffff;
+	COLOR 			:	#000000;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	bold;
+	FONT-SIZE 		:	65%
+}
+.TableLeftWhiteRepData {
+	height 			:	20px;
+	PADDING-LEFT 	: 	2px;
+	vertical-align 	:	middle;
+	text-align 		:	left;
+	BACKGROUND 		: 	#ffffff;
+	COLOR 			:	#000000;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	65%
+}
+.TableRightMaint {
+/*	
+	COLOR			:	#000000;
+	font-weight			:	bold; 
+*/
+	height 			:	20px;
+	PADDING-LEFT 	: 	2px;
+	vertical-align 	:	middle;
+	text-align 		:	right;
+	BACKGROUND 		: 	#F5F5EE;
+	COLOR 			:	#0000FF;/*changed color*/
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight	 	:	normal;/*changed*/
+	FONT-SIZE 		:	70%
+}
+		
+.TableLeftMaint { 
+/*	
+	COLOR			:	#000000;
+	font-weight			:	bold; 
+*/
+	FONT-FAMILY		: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT		: normal; /*changed*/
+	FONT-SIZE		: 70%;
+	TEXT-ALIGN		: left;
+	COLOR			: #0000FF; /*changed color*/
+	HEIGHT			: 20px;
+	PADDING-LEFT	: 2px;
+	BACKGROUND		: #F5F5EE;
+	VERTICAL-ALIGN	: middle;
+}
+.TableLeftMaintTop { 
+	FONT-FAMILY		: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT		: normal;
+	FONT-SIZE		: 70%;
+	TEXT-ALIGN		: left;
+	COLOR			: #0000FF;
+	HEIGHT			: 20px;
+	PADDING-LEFT	        : 2px;
+	BACKGROUND		: #F5F5EE;
+	VERTICAL-ALIGN	        : top;
+}
+.TableLeftSelected 
+{ 
+	height			:	20px;
+	PADDING-LEFT	: 	2px;
+	vertical-align	:	middle;
+	text-align		:	left;
+	BACKGROUND		: 	#ADC3E7;
+	COLOR			:	#000000;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%
+}
+input.FormBtnClr
+{
+	FONT-FAMILY		: 	Verdana,Arial,Helvetica,sans-serif; 
+   	font-size		: 	10px; /* changed from 70% */
+   	font-weight		: 	normal;
+	COLOR			:	#333333;
+	HEIGHT			: 	16px; /* new */
+   	background-color:	#fed;
+   	BORDER			: 	#3E71CC 1px solid;
+	filter			: 	progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#9935ADFF', EndColorStr='#00000000'); /* added gradient  */
+}
+input.FormBtnClrHelp{
+	FONT-FAMILY		: 	Verdana,Arial,Helvetica,sans-serif; 
+   	font-size		: 	8px; /* changed from 70% */
+   	font-weight		: 	Bold;
+	COLOR			: 	#333333;
+	HEIGHT			: 	16px; /* new */
+   	background-color:	#fed;
+   	BORDER			: 	#3E71CC 1px solid;
+	filter			: 	progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#9935ADFF', EndColorStr='#00000000'); /* added gradient  */
+}
+/* Removed - Still needed ???  */
+/*
+.FormBtn 
+.FormBtnClr 
+.FormBtnClrHelp 
+*/
+.FormTextBox { 
+	FONT-FAMILY		: Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	FONT-SIZE		: 10px;
+	BORDER			: #3E71CC 1px solid;
+	PADDING-LEFT	: 2px; /* ??? solve padding problem */
+}
+		
+.FormTextBoxReadOnly { 
+	FONT-FAMILY	:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight	:	normal; 
+	FONT-SIZE	:	10px;
+	COLOR		:	#000000;
+	BACKGROUND	:	transparent;
+	filter			: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#9035ADFF', EndColorStr='#00000000');
+}
+.FormTextBoxHide { 
+	FONT-FAMILY		: Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	FONT-SIZE		: 10px;
+	BORDER			: none;
+	PADDING-LEFT	: 2px; /* ??? solve padding problem */
+}
+		
+.FormTextBoxARight {
+	FONT-FAMILY :	Verdana, Arial, Helvetica, sans-serif;
+	font-weight :	normal;
+	FONT-SIZE 	:	10px;
+	text-align 	:	right;
+	float 		: 	right;  /* might be better left  e.g for Vessel Schedule > Vessel Assignment > Voyage Formula */
+	BORDER		: 	#3E71CC 1px solid; /* changed  color add border */
+}
+.FormTextBoxARightFloatLeft {
+	FONT-FAMILY :	Verdana, Arial, Helvetica, sans-serif;
+	font-weight :	normal;
+	FONT-SIZE 	:	10px;
+	text-align 	:	right;
+	float 		: 	left;
+	BORDER		: 	#3E71CC 1px solid; /* changed  color add border */
+}
+.FormTextBoxReq {
+	FONT-FAMILY	: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT	: normal;
+	FONT-SIZE	: 10px;
+	BACKGROUND	: #FFFFC4;
+	COLOR		: #000000;
+	Border		: #3E71CC 1px solid; /* added border */
+}
+.FormTextBoxAlert {
+	FONT-FAMILY	: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT	: normal;
+	FONT-SIZE	: 10px;
+	BACKGROUND	: #FF6666;
+	COLOR		: #000000;
+	Border		: #3E71CC 1px solid; /* added border */
+        TEXT-ALIGN 	: right;
+	FLOAT 		: left;
+}
+.FormTextBoxWarn {
+	FONT-FAMILY	: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT	: normal;
+	FONT-SIZE	: 10px;
+	BACKGROUND	: #FFcc33;
+	COLOR		: #000000;
+	Border		: #3E71CC 1px solid; /* added border */
+}
+.FormTextBoxWarnARightFloatLeft {
+	FONT-FAMILY	: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT	: normal;
+	FONT-SIZE	: 10px;
+	BACKGROUND	: #FFcc33;
+	COLOR		: #000000;
+	Border		: #3E71CC 1px solid; /* added border */
+        TEXT-ALIGN	: right;
+	FLOAT		: left;
+}
+.FormTextBoxReqARight {
+	FONT-FAMILY		: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT		: normal;
+	FONT-SIZE		: 10px;
+	COLOR			: #000000;
+	BACKGROUND		: #FFFFC4;
+	BORDER			: #3E71CC 1px solid; /* added border */
+	TEXT-ALIGN 		: right;
+	FLOAT 			: right;
+}
+
+.FormTextBoxReqARightFloatLeft {
+	FONT-FAMILY		: Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT		: normal;
+	FONT-SIZE		: 10px;
+	COLOR			: #000000;
+	BACKGROUND		: #FFFFC4; 
+	BORDER			: #3E71CC 1px solid;  /* added border */
+	TEXT-ALIGN 		: right;
+	FLOAT 			: left;
+}
+.FormDropDown {
+	FONT-FAMILY		: Verdana,Arial,Helvetica,sans-serif; 
+	Border			: #3E71CC 1px solid; /* added border */
+	FONT-SIZE		: 10px; 
+	FONT-WEIGHT		: normal;
+	BORDER			: #3E71CC 1px solid;  /* added border */
+}
+.FormDropDownReq {
+	FONT-FAMILY 	: Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	: normal;
+	FONT-SIZE 		: 10px;
+	Border-Style 	: solid;
+	BACKGROUND 		: #FFFFC4;
+	BORDER			: #3E71CC 1px solid;  /* added border */
+}
+.TableBorder {
+	BORDER-RIGHT	: #3D77cb 1px solid; /* changed color  from  7288AC */
+	BORDER-TOP		: #3D77cb 1px solid; /* changed color  from  7288AC */
+	BORDER-LEFT		: #3D77cb 1px solid; /* changed color  from 7288AC  */
+	BORDER-BOTTOM	: #7288ac 1px solid  /* changed color  from 7288AC  */
+}
+.TableRightSub {
+	height			:	20px;
+	text-align		:	right;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%;
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	:	middle;
+	PADDING-LEFT	: 	2px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+}
+.TableRightSub_1 {
+	BORDER-TOP: #c5c1b1 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 70%;
+	BACKGROUND: #e9e7d7;
+	VERTICAL-ALIGN: middle;
+	COLOR: #000000;
+	BORDER-BOTTOM: #c5c1b1 2px solid;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	HEIGHT: 20px;
+	TEXT-ALIGN: right
+}
+.FormTextBoxError 
+{ 
+	FONT-FAMILY	:	Verdana,Tahoma,Arial,Helvetica,sans-serif;
+	font-weight	:	normal; 
+	FONT-SIZE	:	11px;
+	COLOR		:	#FFFFFF;
+	BACKGROUND	:	#FF0000;
+}
+/* 
+	start - table scrolling
+*/		
+#container 
+{
+	overflow 	: auto;
+	width 		: 100%;
+}
+thead tr 
+{
+	position	: relative;
+	cursor 		: default;
+	top 		: expression(document.getElementById("container").scrollTop-2); /* IE5+ only */
+	z-index 	: 1; /* Z-index can be used to place an element "behind" another element. default is 0 */
+}
+#locked 
+{
+	position :relative;
+}
+/* 
+	end - table scrolling
+*/		
+
+.hidden {
+	border 			: 	0px solid #000000;
+	background-color: 	transparent;
+	FONT-FAMILY		:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	11px;
+}
+.hiddenARight {
+	border 			: 	0px solid #000000;
+	background-color: 	transparent;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight 	:	normal;
+	FONT-SIZE 		:	10px;
+	text-align 		:	right;
+	float 			: 	right;
+}
+/*******************     page numbers on bottom of list      ******************** */ 
+a.pageNumber:link {
+	FONT-FAMILY		:	Verdana, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT 	        :	Normal;
+	FONT-SIZE 		:	12px;
+	COLOR			:	#3D77CB;
+}
+a.pageNumber:visited {
+	COLOR			:	#3162A6;
+}
+a.pageNumber:active {
+	COLOR			:	#FF0000;
+}
+/*********************     TACS Reports       ******************** */ 
+.ReportTitle {
+	vertical-align 	:	middle;
+	text-align 		:	center;
+	COLOR 			:	#000000;
+	FONT-FAMILY 	:	Verdana, Arial, Helvetica, sans-serif;
+	font-weight	 	:	bold;
+	FONT-SIZE 		:	80%;
+}
+.ReportContentTitle {
+	/*changed by kl team V1.27*/
+		/*vertical-align	:	top;*/
+		vertical-align :	middle;
+	/*end changed by kl team V1.27*/
+		COLOR :	#000000;
+	FONT-FAMILY :	Verdana, Arial, Helvetica, sans-serif;
+	font-weight :	bold;
+	FONT-SIZE :	60%;
+}
+.ReportContent {
+	/*changed by kl team V1.27*/
+		/*vertical-align	:	top;*/
+		vertical-align :	middle;
+	/*end changed by kl team V1.27*/
+		COLOR :	#000000;
+	FONT-FAMILY :	Verdana, Arial, Helvetica, sans-serif;
+	font-weight :	normal;
+	FONT-SIZE :	60%;
+}
+.ReportHeader1 
+{ 
+	height			: 18px;
+	padding-left	: 2px;
+	vertical-align	: middle;
+	text-align		: left;
+	background		: #969696;
+	color			: #FFFFFF;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+
+.ReportHeader2 
+{ 
+	height			: 15px;
+	padding-left	: 2px;
+	vertical-align	: top;
+	text-align		: left;
+	background		: #E9E7D7;
+	color			: #000000;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+.ReportHeader3 
+{ 
+	height			: 18px;
+	padding-left	: 2px;
+	vertical-align	: top;
+	text-align		: left;
+	background		: #ECE9D8;
+	color			: #000000;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+
+
+.ReportData
+{ 
+	height			: 18px;
+	padding-left	: 2px;
+	vertical-align	: middle;
+	text-align		: left;
+	background		: #FFFFFF;
+	color				: #000000;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+
+.ReportDataNumber
+{ 
+	height			: 18px;
+	padding-right	: 2px;
+	vertical-align	: middle;
+	text-align		: right;
+	background		: #FFFFFF;
+	color				: #000000;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+.ReportData1
+{ 
+	height			: 18px;
+	padding-left	: 2px;
+	vertical-align	: middle;
+	text-align		: left;
+	background		: #FFFFFF;
+	color				: #FF0000;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+.ReportData2
+{ 
+	height			: 18px;
+	padding-left	: 2px;
+	vertical-align	: middle;
+	text-align		: left;
+	background		: #FFFFFF;
+	color				: #00FF00;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+.ReportData3
+{ 
+	height			: 18px;
+	padding-left	: 2px;
+	vertical-align	: middle;
+	text-align		: left;
+	background		: #FFFFFF;
+	color				: #0000FF;
+	font-family		: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-weight		: normal; 
+	font-size		: 7pt;
+}
+.FreezedHeader 
+{
+	position: relative; 
+	top     : expression(this.offsetParent.scrollTop-2);	
+	width   : 100%;
+	height  : 100%;
+        z-index : 10;
+}
+
+.FreezedCols 
+{
+	position: relative; 	
+        left    : expression(parentNode.parentNode.parentNode.parentNode.scrollLeft);
+	width   : 100%;
+	height  : 100%;
+}
+
+.FreezedHeader2 { 
+	height			:	25px;
+	text-align		:	left;
+	FONT-FAMILY		:	Verdana,Arial,Helvetica,sans-serif;
+	font-weight		:	normal; 
+	FONT-SIZE		:	70%;
+	COLOR			: 	#003399; /* changed color  from #000000*/
+	BACKGROUND		: 	#E9E7D7; /* changed color for R1.2 to 72A2F6*/
+	vertical-align	:	middle;
+	PADDING-LEFT	: 	1px;
+	BORDER-BOTTOM 	:	#6A7896 1px solid; /* changed color and px*/
+	BORDER-TOP 		:	#6A7896 1px solid; /* changed color */
+        position: relative; 
+	top     : expression(this.offsetParent.scrollTop);	
+        left    : expression(parentNode.parentNode.parentNode.parentNode.scrollLeft);
+	width   : 5%;	
+        z-index : 1;
+}
